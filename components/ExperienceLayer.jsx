@@ -46,17 +46,24 @@ export default function ExperienceLayer() {
       triggers.push(make('#themes', 'rise', 'top bottom', 'top 35%'));
     }
 
+    // mousemove can outpace the frame rate — coalesce style writes into one rAF
+    let pointerRaf = 0;
+    const flushPointer = () => {
+      pointerRaf = 0;
+      document.documentElement.style.setProperty('--px', cityState.px.toFixed(3));
+      document.documentElement.style.setProperty('--py', cityState.py.toFixed(3));
+    };
     const onMove = (e) => {
       cityState.px = (e.clientX / window.innerWidth) * 2 - 1;
       cityState.py = (e.clientY / window.innerHeight) * 2 - 1;
-      document.documentElement.style.setProperty('--px', cityState.px.toFixed(3));
-      document.documentElement.style.setProperty('--py', cityState.py.toFixed(3));
+      if (!pointerRaf) pointerRaf = requestAnimationFrame(flushPointer);
     };
     window.addEventListener('mousemove', onMove, { passive: true });
 
     return () => {
       triggers.filter(Boolean).forEach((t) => t.kill());
       window.removeEventListener('mousemove', onMove);
+      if (pointerRaf) cancelAnimationFrame(pointerRaf);
     };
   }, []);
 

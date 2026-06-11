@@ -5,7 +5,8 @@ import * as THREE from 'three';
 
 export default function GoldLandscape() {
   const geometry = useMemo(() => {
-    const geo = new THREE.PlaneGeometry(80, 80, 96, 96);
+    // 64 segments reads identically to 96 at 0.1-opacity wireframe — half the triangles
+    const geo = new THREE.PlaneGeometry(80, 80, 64, 64);
     geo.rotateX(-Math.PI / 2);
     const pos = geo.attributes.position;
     for (let i = 0; i < pos.count; i += 1) {
@@ -23,7 +24,7 @@ export default function GoldLandscape() {
 
   return (
     <mesh geometry={geometry}>
-      <meshBasicMaterial color="#c9a84c" wireframe transparent opacity={0.1} />
+      <meshBasicMaterial color="#d6b55b" wireframe transparent opacity={0.1} />
     </mesh>
   );
 }

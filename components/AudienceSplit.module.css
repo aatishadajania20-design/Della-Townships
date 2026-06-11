@@ -18,7 +18,7 @@
 
 .media {
   position: relative;
-  height: clamp(280px, 38vw, 480px);
+  height: clamp(360px, 46vw, 600px);
   overflow: hidden;
 }
 
@@ -38,11 +38,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: clamp(48px, 5vw, 80px);
+  padding: clamp(56px, 7vw, 112px);
 }
 
 .content :global(.eyebrow) {
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 
 .title {
@@ -50,7 +50,7 @@
   font-weight: 500;
   font-size: clamp(28px, 2.6vw, 40px);
   line-height: 1.15;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   max-width: 18ch;
 }
 
@@ -58,7 +58,7 @@
   color: var(--muted);
   font-size: 15px;
   max-width: 46ch;
-  margin-bottom: 44px;
+  margin-bottom: 56px;
 }
 
 @media (max-width: 860px) {

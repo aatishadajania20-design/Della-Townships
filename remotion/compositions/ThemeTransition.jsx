@@ -28,7 +28,7 @@ export default function ThemeTransition() {
     <AbsoluteFill style={{ backgroundColor: BG, justifyContent: 'center', alignItems: 'center' }}>
       <AbsoluteFill
         style={{
-          background: `radial-gradient(ellipse 60% 45% at 50% 55%, rgba(201,168,76,${glow}) 0%, transparent 70%)`,
+          background: `radial-gradient(ellipse 60% 45% at 50% 55%, rgba(214,181,91,${glow}) 0%, transparent 70%)`,
         }}
       />
       <div

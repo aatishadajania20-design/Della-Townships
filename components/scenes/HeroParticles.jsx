@@ -3,13 +3,13 @@
 import { useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-
-const COUNT = 320;
+import { isLowPowerDevice } from './perf';
 
 export default function HeroParticles() {
   const ref = useRef(null);
 
   const geometry = useMemo(() => {
+    const COUNT = isLowPowerDevice() ? 140 : 320;
     const positions = new Float32Array(COUNT * 3);
     for (let i = 0; i < COUNT; i += 1) {
       positions[i * 3] = (Math.random() - 0.5) * 24;
@@ -31,7 +31,7 @@ export default function HeroParticles() {
   return (
     <points ref={ref} geometry={geometry}>
       <pointsMaterial
-        color="#e8d5a3"
+        color="#ead9ac"
         size={0.035}
         sizeAttenuation
         transparent

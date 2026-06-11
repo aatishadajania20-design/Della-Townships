@@ -3,7 +3,7 @@
   z-index: 1;
   background: rgba(17, 17, 17, 0.62);
   border-top: 1px solid var(--line);
-  padding: clamp(72px, 8vw, 120px) var(--pad-x) 40px;
+  padding: clamp(96px, 11vw, 160px) var(--pad-x) 44px;
 }
 
 .top {
@@ -11,14 +11,14 @@
   grid-template-columns: 2fr 1fr 1fr 1.4fr;
   gap: 48px;
   max-width: 1300px;
-  margin: 0 auto clamp(64px, 7vw, 100px);
+  margin: 0 auto clamp(80px, 9vw, 130px);
 }
 
 .wordmark {
   font-family: var(--font-display), Georgia, serif;
   font-size: 24px;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.26em;
   margin-bottom: 20px;
 }
 

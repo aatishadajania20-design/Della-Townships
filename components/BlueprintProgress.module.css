@@ -1,0 +1,78 @@
+.rail {
+  position: fixed;
+  right: clamp(20px, 3vw, 44px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  pointer-events: none;
+}
+
+.phases {
+  position: relative;
+  width: 14px;
+  height: 130px;
+}
+
+.phase {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  writing-mode: vertical-rl;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.phase i {
+  font-style: normal;
+  color: var(--gold);
+}
+
+.rail[data-phase='0'] .phase:nth-child(1),
+.rail[data-phase='1'] .phase:nth-child(2),
+.rail[data-phase='2'] .phase:nth-child(3),
+.rail[data-phase='3'] .phase:nth-child(4),
+.rail[data-phase='4'] .phase:nth-child(5),
+.rail[data-phase='5'] .phase:nth-child(6) {
+  opacity: 1;
+}
+
+.line {
+  position: relative;
+  width: 1px;
+  height: clamp(110px, 16vh, 170px);
+  background: rgba(245, 245, 240, 0.14);
+  overflow: hidden;
+}
+
+.fill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, var(--gold-light), var(--gold));
+  transform: scaleY(0);
+  transform-origin: top;
+  will-change: transform;
+}
+
+@media (max-width: 900px) {
+  .rail {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rail {
+    display: none;
+  }
+}

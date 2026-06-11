@@ -1,5 +1,5 @@
 .press {
-  padding: clamp(72px, 8vw, 120px) var(--pad-x);
+  padding: clamp(96px, 11vw, 160px) var(--pad-x);
   border-top: 1px solid rgba(245, 245, 240, 0.06);
   text-align: center;
 }
@@ -9,7 +9,7 @@
   letter-spacing: 0.34em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 48px;
+  margin-bottom: 56px;
 }
 
 .list {

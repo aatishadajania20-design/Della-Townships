@@ -15,12 +15,12 @@ export default function FounderSequence() {
     <AbsoluteFill style={{ backgroundColor: BG, overflow: 'hidden' }}>
       <AbsoluteFill
         style={{
-          background: `radial-gradient(ellipse 70% 55% at ${glowX}% ${glowY}%, rgba(201,168,76,${breathe}) 0%, rgba(10,10,10,0) 65%)`,
+          background: `radial-gradient(ellipse 70% 55% at ${glowX}% ${glowY}%, rgba(214,181,91,${breathe}) 0%, rgba(10,10,10,0) 65%)`,
         }}
       />
       <AbsoluteFill
         style={{
-          background: `linear-gradient(115deg, transparent ${streak - 12}%, rgba(232,213,163,0.10) ${streak}%, transparent ${streak + 12}%)`,
+          background: `linear-gradient(115deg, transparent ${streak - 12}%, rgba(234,217,172,0.10) ${streak}%, transparent ${streak + 12}%)`,
         }}
       />
       {[22, 50, 78].map((top, i) => (

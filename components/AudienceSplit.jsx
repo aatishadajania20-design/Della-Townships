@@ -10,7 +10,7 @@ const PANELS = [
     id: 'landowners',
     eyebrow: 'For Landowners',
     title: 'You Own the Land. We Bring Everything Else.',
-    body: 'Della partners with landowners across India through an asset-light model. You retain ownership. We bring three decades of design, the Della brand, and proven demand — and transform your land into a destination.',
+    body: 'DELLA partners with landowners across India through an asset-light model. You retain ownership. We bring three decades of design, the DELLA brand, and proven demand — and transform your land into a destination.',
     cta: 'Partner With Us',
     image:
       'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80',
@@ -19,8 +19,8 @@ const PANELS = [
   {
     id: 'members',
     eyebrow: 'For Members',
-    title: 'One Membership. Every Della Township.',
-    body: 'Della Resort Memberships open the door before the first township does — privileged access to Della Resorts, Lonavala today, and to every theme-based township as it rises across 10 cities.',
+    title: 'One Membership. Every DELLA Township.',
+    body: 'DELLA Resort Memberships open the door before the first township does — privileged access to DELLA Resorts, Lonavala today, and to every theme-based township as it rises across 10 cities.',
     cta: 'Become a Member',
     image:
       'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80',
@@ -37,7 +37,7 @@ export default function AudienceSplit() {
     >
       {PANELS.map((panel) => (
         <article className={styles.panel} key={panel.id}>
-          <div className={styles.media}>
+          <Reveal className={styles.media} variant="mask">
             <div className={styles.mediaInner} data-depth="0.35">
               <Image
                 src={panel.image}
@@ -47,7 +47,7 @@ export default function AudienceSplit() {
                 style={{ objectFit: 'cover' }}
               />
             </div>
-          </div>
+          </Reveal>
           <div className={styles.content}>
             <Reveal as="p" className="eyebrow">
               {panel.eyebrow}

@@ -11,7 +11,7 @@
   z-index: 2;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 90% 70% at 50% 110%, rgba(201, 168, 76, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 90% 70% at 50% 110%, rgba(214, 181, 91, 0.12) 0%, transparent 60%),
     linear-gradient(to bottom, rgba(10, 10, 10, 0.55) 0%, rgba(10, 10, 10, 0) 30%),
     linear-gradient(to top, rgba(10, 10, 10, 0.92) 0%, rgba(10, 10, 10, 0) 36%);
   opacity: calc(0.7 + var(--seq) * 0.3);
@@ -31,9 +31,8 @@
   font-size: 9px;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: rgba(232, 213, 163, 0.5);
+  color: rgba(234, 217, 172, 0.5);
   background: rgba(17, 17, 17, 0.18);
-  backdrop-filter: blur(2px);
   transform: translate3d(calc(var(--px, 0) * -14px), calc(var(--seq) * -26vh + var(--py, 0) * -10px), 0)
     rotate(-2deg);
   opacity: calc(0.85 - var(--seq) * 1.1);
@@ -45,7 +44,7 @@
   content: '';
   position: absolute;
   inset: 24px 24px 44px;
-  border: 1px solid rgba(201, 168, 76, 0.16);
+  border: 1px solid rgba(214, 181, 91, 0.16);
 }
 
 .planeAlt {
@@ -55,16 +54,15 @@
   left: clamp(24px, 7vw, 120px);
   width: clamp(140px, 15vw, 220px);
   aspect-ratio: 3 / 2;
-  border: 1px solid rgba(201, 168, 76, 0.16);
+  border: 1px solid rgba(214, 181, 91, 0.16);
   padding: 14px;
   display: flex;
   align-items: flex-start;
   font-size: 9px;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: rgba(232, 213, 163, 0.42);
+  color: rgba(234, 217, 172, 0.42);
   background: rgba(17, 17, 17, 0.14);
-  backdrop-filter: blur(2px);
   transform: translate3d(calc(var(--px, 0) * 10px), calc(var(--seq) * -34vh + var(--py, 0) * 8px), 0)
     rotate(1.5deg);
   opacity: calc(0.7 - var(--seq) * 1.2);
@@ -90,7 +88,7 @@
 .ticks span::after {
   content: '';
   position: absolute;
-  background: rgba(201, 168, 76, 0.55);
+  background: rgba(214, 181, 91, 0.55);
 }
 
 .ticks span::before {
@@ -127,13 +125,22 @@
   right: 0;
 }
 
+/* `translate` composes with `transform` and runs on the compositor —
+   no per-frame style recalc, unlike animating a registered custom property */
 @keyframes hover-drift {
   0%,
   100% {
-    margin-top: 0;
+    translate: 0 0;
   }
   50% {
-    margin-top: -14px;
+    translate: 0 -14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plane,
+  .planeAlt {
+    animation: none;
   }
 }
 
@@ -152,12 +159,12 @@
 }
 
 .eyebrow {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.32em;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.44em;
   text-transform: uppercase;
   color: var(--gold-light);
-  margin-bottom: 36px;
+  margin-bottom: 40px;
 }
 
 .headline {
@@ -166,7 +173,7 @@
   font-size: var(--size-hero);
   line-height: 1.04;
   letter-spacing: -0.015em;
-  margin-bottom: 32px;
+  margin-bottom: 36px;
   transform: scale(calc(1 + var(--seq) * 0.12));
   transform-origin: left center;
   will-change: transform;
@@ -180,10 +187,10 @@
 .sub {
   font-size: 15px;
   font-weight: 400;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 56px;
+  margin-bottom: 64px;
 }
 
 .foot {

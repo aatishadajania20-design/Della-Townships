@@ -32,7 +32,7 @@
   font-size: clamp(140px, 20vw, 320px);
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(201, 168, 76, 0.08);
+  -webkit-text-stroke: 1px rgba(214, 181, 91, 0.08);
   pointer-events: none;
   user-select: none;
 }
@@ -41,15 +41,15 @@
   position: relative;
   z-index: 1;
   max-width: 760px;
-  margin-bottom: clamp(64px, 7vw, 110px);
+  margin-bottom: clamp(88px, 10vw, 150px);
 }
 
 .head :global(.eyebrow) {
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
 .intro {
-  margin-top: 36px;
+  margin-top: 44px;
   color: var(--muted);
   font-size: 16px;
   max-width: 54ch;
@@ -60,7 +60,7 @@
   z-index: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(24px, 3vw, 48px);
+  gap: clamp(32px, 4.5vw, 72px);
 }
 
 .card {
@@ -83,7 +83,7 @@
   position: relative;
   aspect-ratio: 4 / 5;
   overflow: hidden;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   transform: translateZ(0);
 }
 
@@ -91,7 +91,7 @@
   position: absolute;
   inset: 14px;
   z-index: 2;
-  border: 1px solid rgba(201, 168, 76, 0.6);
+  border: 1px solid rgba(214, 181, 91, 0.6);
   opacity: 0;
   transform: scale(0.95);
   transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
@@ -134,7 +134,7 @@
   transition: opacity 0.4s ease;
   background: radial-gradient(
     340px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(232, 213, 163, 0.18),
+    rgba(234, 217, 172, 0.18),
     transparent 65%
   );
 }

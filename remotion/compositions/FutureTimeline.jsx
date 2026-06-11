@@ -82,7 +82,7 @@ export default function FutureTimeline() {
                 y={BASE - hh}
                 width={w}
                 height={Math.max(hh, 0.01)}
-                fill={`rgba(201,168,76,${fill + glow * 0.08})`}
+                fill={`rgba(214,181,91,${fill + glow * 0.08})`}
                 stroke={GOLD}
                 strokeWidth="1"
               />
@@ -135,7 +135,7 @@ export default function FutureTimeline() {
                 fontSize: 170,
                 lineHeight: 1,
                 color: 'transparent',
-                WebkitTextStroke: `2px rgba(201,168,76,0.4)`,
+                WebkitTextStroke: `2px rgba(214,181,91,0.4)`,
                 opacity,
               }}
             >

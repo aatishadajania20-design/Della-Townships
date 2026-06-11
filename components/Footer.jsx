@@ -43,8 +43,8 @@ export default function Footer() {
       </div>
 
       <div className={styles.bottom}>
-        <p>&copy; {new Date().getFullYear()} Della Group. All rights reserved.</p>
-        <p>Della Resorts &middot; Lonavala</p>
+        <p>&copy; {new Date().getFullYear()} DELLA Group. All rights reserved.</p>
+        <p>DELLA Resorts &middot; Lonavala</p>
       </div>
     </footer>
   );

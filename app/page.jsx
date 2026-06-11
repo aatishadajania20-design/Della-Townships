@@ -1,5 +1,6 @@
 import SmoothScroll from '../components/motion/SmoothScroll';
 import ExperienceLayer from '../components/ExperienceLayer';
+import BlueprintProgress from '../components/BlueprintProgress';
 import ShockMoment from '../components/motion/ShockMoment';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <SmoothScroll>
       <ExperienceLayer />
+      <BlueprintProgress />
       <Navbar />
       <main>
         <Hero />

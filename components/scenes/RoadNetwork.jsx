@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import cityState from './cityState';
@@ -33,16 +33,16 @@ function ring(r) {
 }
 
 export default function RoadNetwork() {
-  const { group, items } = useMemo(() => {
+  const { group, items, mats } = useMemo(() => {
     const g = new THREE.Group();
     const list = [];
     const matArterial = new THREE.LineBasicMaterial({
-      color: '#c9a84c',
+      color: '#d6b55b',
       transparent: true,
       opacity: 0.5,
     });
     const matStreet = new THREE.LineBasicMaterial({
-      color: '#c9a84c',
+      color: '#d6b55b',
       transparent: true,
       opacity: 0.24,
     });
@@ -74,17 +74,27 @@ export default function RoadNetwork() {
       add([[-13, x], [13, x]], matStreet, 'b', k++);
     }
 
-    return { group: g, items: list };
+    return { group: g, items: list, mats: { a: matArterial, b: matStreet } };
   }, []);
 
-  useFrame(() => {
+  const last = useRef({ draw: -1, districts: -1 });
+
+  useFrame(({ clock }) => {
     const draw = Math.max(cityState.hero * 0.45, cityState.draw);
     const districts = cityState.districts;
-    for (const it of items) {
-      const base =
-        it.groupKey === 'a' ? draw * 1.7 - it.idx * 0.07 : districts * 1.7 - it.idx * 0.04;
-      const p = THREE.MathUtils.clamp(base, 0, 1);
-      it.geo.setDrawRange(0, Math.floor(p * it.count));
+    const energy = Math.max(cityState.complete, cityState.final);
+    mats.a.opacity = 0.5 + energy * (0.22 + Math.sin(clock.getElapsedTime() * 1.3) * 0.06);
+    mats.b.opacity = 0.24 + energy * 0.12;
+    // draw ranges only change while their scroll bands are active
+    if (draw !== last.current.draw || districts !== last.current.districts) {
+      last.current.draw = draw;
+      last.current.districts = districts;
+      for (const it of items) {
+        const base =
+          it.groupKey === 'a' ? draw * 1.7 - it.idx * 0.07 : districts * 1.7 - it.idx * 0.04;
+        const p = THREE.MathUtils.clamp(base, 0, 1);
+        it.geo.setDrawRange(0, Math.floor(p * it.count));
+      }
     }
   });
 

@@ -20,7 +20,7 @@
   font-size: clamp(160px, 24vw, 380px);
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(201, 168, 76, 0.1);
+  -webkit-text-stroke: 1px rgba(214, 181, 91, 0.1);
   pointer-events: none;
   user-select: none;
 }
@@ -32,8 +32,13 @@
   left: -10%;
   width: 60%;
   aspect-ratio: 1;
-  background: radial-gradient(circle, rgba(201, 168, 76, 0.07) 0%, transparent 65%);
-  filter: blur(40px);
+  /* blur baked into the gradient falloff — same glow, no filter raster */
+  background: radial-gradient(
+    circle,
+    rgba(214, 181, 91, 0.06) 0%,
+    rgba(214, 181, 91, 0.035) 40%,
+    transparent 72%
+  );
   pointer-events: none;
 }
 
@@ -45,7 +50,7 @@
 }
 
 .inner :global(.eyebrow) {
-  margin-bottom: 48px;
+  margin-bottom: 64px;
 }
 
 .text {
@@ -55,7 +60,7 @@
   line-height: 1.12;
   letter-spacing: -0.01em;
   max-width: 19ch;
-  margin-bottom: 72px;
+  margin-bottom: clamp(80px, 9vw, 128px);
 }
 
 .text em {
@@ -75,7 +80,7 @@
 }
 
 .body p + p {
-  margin-top: 24px;
+  margin-top: 28px;
 }
 
 @media (max-width: 768px) {

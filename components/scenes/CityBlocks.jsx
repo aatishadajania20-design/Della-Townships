@@ -11,6 +11,7 @@ export default function CityBlocks() {
   const meshRef = useRef(null);
   const beaconRef = useRef(null);
   const haloRef = useRef(null);
+  const lastRise = useRef(-1);
 
   const blocks = useMemo(() => {
     const arr = [];
@@ -38,17 +39,21 @@ export default function CityBlocks() {
     const settle = Math.max(cityState.complete, cityState.final);
     const t = clock.getElapsedTime();
 
-    for (let i = 0; i < blocks.length; i += 1) {
-      const b = blocks[i];
-      const local = THREE.MathUtils.clamp(rise * 1.7 - b.delay * 0.95, 0, 1);
-      const e = 1 - (1 - local) ** 3;
-      const h = b.h * e;
-      dummy.position.set(b.x, h / 2 - 0.4, b.z);
-      dummy.scale.set(0.8, Math.max(h, 0.001), 0.8);
-      dummy.updateMatrix();
-      meshRef.current.setMatrixAt(i, dummy.matrix);
+    // matrices depend only on rise — skip the rebuild on idle frames
+    if (rise !== lastRise.current) {
+      lastRise.current = rise;
+      for (let i = 0; i < blocks.length; i += 1) {
+        const b = blocks[i];
+        const local = THREE.MathUtils.clamp(rise * 1.7 - b.delay * 0.95, 0, 1);
+        const e = 1 - (1 - local) ** 3;
+        const h = b.h * e;
+        dummy.position.set(b.x, h / 2 - 0.4, b.z);
+        dummy.scale.set(0.8, Math.max(h, 0.001), 0.8);
+        dummy.updateMatrix();
+        meshRef.current.setMatrixAt(i, dummy.matrix);
+      }
+      meshRef.current.instanceMatrix.needsUpdate = true;
     }
-    meshRef.current.instanceMatrix.needsUpdate = true;
     meshRef.current.material.opacity = 0.13 + settle * 0.12 + Math.sin(t * 0.8) * 0.015;
 
     if (beaconRef.current) {
@@ -68,7 +73,7 @@ export default function CityBlocks() {
       <instancedMesh ref={meshRef} args={[undefined, undefined, blocks.length]}>
         <boxGeometry args={[1, 1, 1]} />
         <meshBasicMaterial
-          color="#c9a84c"
+          color="#d6b55b"
           transparent
           opacity={0.13}
           blending={THREE.AdditiveBlending}
@@ -78,7 +83,7 @@ export default function CityBlocks() {
       <mesh ref={beaconRef}>
         <cylinderGeometry args={[0.06, 0.06, 1, 6]} />
         <meshBasicMaterial
-          color="#e8d5a3"
+          color="#ead9ac"
           transparent
           opacity={0}
           blending={THREE.AdditiveBlending}
@@ -88,7 +93,7 @@ export default function CityBlocks() {
       <mesh ref={haloRef}>
         <sphereGeometry args={[0.18, 12, 12]} />
         <meshBasicMaterial
-          color="#e8d5a3"
+          color="#ead9ac"
           transparent
           opacity={0}
           blending={THREE.AdditiveBlending}

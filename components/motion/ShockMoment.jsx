@@ -3,6 +3,7 @@
 import { useCallback } from 'react';
 import ScrollSequence from './ScrollSequence';
 import cityState from '../scenes/cityState';
+import MasterplanSketch from '../scenes/MasterplanSketch';
 import styles from './ShockMoment.module.css';
 
 export default function ShockMoment() {
@@ -17,6 +18,12 @@ export default function ShockMoment() {
       onProgress={onProgress}
       ariaLabel="The township rises"
     >
+      <div className={styles.plan} aria-hidden="true">
+        <div className={styles.planFrame}>
+          <MasterplanSketch />
+        </div>
+      </div>
+
       <div className={styles.corners} aria-hidden="true">
         <span />
         <span />
@@ -25,6 +32,9 @@ export default function ShockMoment() {
       </div>
       <p className={styles.tagline}>Redefining How India Lives, Works &amp; Dreams.</p>
       <div className={styles.rule} aria-hidden="true" />
+      <p className={styles.plate} aria-hidden="true">
+        Masterplan &mdash; 4,288 Acres &middot; 10 Cities
+      </p>
     </ScrollSequence>
   );
 }

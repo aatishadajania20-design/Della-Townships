@@ -49,7 +49,7 @@ export default function Statement() {
       <div className={styles.glow} data-depth="-0.25" aria-hidden="true" />
 
       <div className={styles.inner}>
-        <p className="eyebrow">The Della Thesis</p>
+        <p className="eyebrow">The DELLA Thesis</p>
         <h2 className={styles.text} ref={ref}>
           {SENTENCE.map((word, i) => (
             <span className={styles.word} key={`s${i}`}>
@@ -67,14 +67,14 @@ export default function Statement() {
 
         <Reveal className={styles.body}>
           <p>
-            Della Townships designs theme-based luxury townships across India &mdash; without
-            owning the land. Landowners keep their asset. Della brings the design, the brand, and
+            DELLA Townships designs theme-based luxury townships across India &mdash; without
+            owning the land. Landowners keep their asset. DELLA brings the design, the brand, and
             the demand. Every township is built around one idea: people live longer, better lives
             in places designed for how they actually want to live.
           </p>
           <p>
-            The proof already exists. Della Resorts, Lonavala &mdash; conceived, designed, and
-            operated by Della &mdash; set the standard for experiential luxury in India. Townships
+            The proof already exists. DELLA Resorts, Lonavala &mdash; conceived, designed, and
+            operated by DELLA &mdash; set the standard for experiential luxury in India. Townships
             are that standard, at the scale of a city.
           </p>
         </Reveal>

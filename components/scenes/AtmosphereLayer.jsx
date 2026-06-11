@@ -17,7 +17,7 @@ const fragmentShader = /* glsl */ `
   varying vec2 vUv;
   void main() {
     vec3 night = vec3(0.039, 0.039, 0.039);
-    vec3 gold = vec3(0.788, 0.659, 0.298);
+    vec3 gold = vec3(0.839, 0.710, 0.357);
     float horizon = smoothstep(0.62, 0.38, vUv.y) * smoothstep(0.05, 0.34, vUv.y);
     float breathe = 0.85 + sin(uTime * 0.3) * 0.15;
     float center = 1.0 - smoothstep(0.0, 0.75, abs(vUv.x - 0.5));

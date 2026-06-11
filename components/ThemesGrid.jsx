@@ -44,7 +44,7 @@ const THEMES = [
   },
   {
     name: 'Adventure & Nature',
-    note: 'The Della Resorts DNA, citywide',
+    note: 'The DELLA Resorts DNA, citywide',
     image:
       'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80',
     alt: 'Sunlight breaking over a dramatic mountain valley',
@@ -68,7 +68,7 @@ export default function ThemesGrid() {
           With a Way of Life
         </Reveal>
         <Reveal as="p" className={styles.intro} delay={0.16}>
-          Not plots and towers &mdash; living themes. Each Della township is designed around a
+          Not plots and towers &mdash; living themes. Each DELLA township is designed around a
           single way of life, then built outward: homes, hospitality, wellness, and work, all in
           service of it.
         </Reveal>
@@ -76,7 +76,7 @@ export default function ThemesGrid() {
 
       <div className={styles.grid}>
         {THEMES.map((theme, index) => (
-          <Reveal as="figure" className={styles.card} key={theme.name} delay={(index % 3) * 0.08}>
+          <Reveal as="figure" className={styles.card} key={theme.name} delay={(index % 3) * 0.1} variant="mask">
             <Exhibit theme={theme} index={index} />
           </Reveal>
         ))}
@@ -87,16 +87,28 @@ export default function ThemesGrid() {
 
 function Exhibit({ theme, index }) {
   const ref = useRef(null);
+  const pointer = useRef({ x: 0, y: 0, raf: 0 });
 
-  const handleMove = (e) => {
+  // coalesce tilt updates into one style write per frame
+  const flushTilt = () => {
+    const p = pointer.current;
+    p.raf = 0;
     const el = ref.current;
+    if (!el) return;
     const r = el.getBoundingClientRect();
-    const mx = (e.clientX - r.left) / r.width;
-    const my = (e.clientY - r.top) / r.height;
+    const mx = (p.x - r.left) / r.width;
+    const my = (p.y - r.top) / r.height;
     el.style.setProperty('--rx', `${((0.5 - my) * 8).toFixed(2)}deg`);
     el.style.setProperty('--ry', `${((mx - 0.5) * 10).toFixed(2)}deg`);
     el.style.setProperty('--mx', `${(mx * 100).toFixed(1)}%`);
     el.style.setProperty('--my', `${(my * 100).toFixed(1)}%`);
+  };
+
+  const handleMove = (e) => {
+    const p = pointer.current;
+    p.x = e.clientX;
+    p.y = e.clientY;
+    if (!p.raf) p.raf = requestAnimationFrame(flushTilt);
   };
 
   const handleLeave = () => {

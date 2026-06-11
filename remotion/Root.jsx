@@ -1,5 +1,6 @@
 import { Composition } from 'remotion';
 import FutureTimeline, { TIMELINE_FRAMES } from './compositions/FutureTimeline';
+import Masterplan, { MASTERPLAN_FRAMES } from './compositions/Masterplan';
 import HeroSequence from './compositions/HeroSequence';
 import FounderSequence from './compositions/FounderSequence';
 import ProofTransition from './compositions/ProofTransition';
@@ -15,6 +16,14 @@ export function RemotionRoot() {
         fps={30}
         width={1280}
         height={720}
+      />
+      <Composition
+        id="Masterplan"
+        component={Masterplan}
+        durationInFrames={MASTERPLAN_FRAMES}
+        fps={30}
+        width={1080}
+        height={1080}
       />
       <Composition
         id="HeroSequence"

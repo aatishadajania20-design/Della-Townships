@@ -3,9 +3,10 @@
   z-index: 5;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: rgba(10, 10, 10, 0.7);
-  backdrop-filter: blur(8px);
-  padding: 26px 0;
+  /* no backdrop-filter: the canvas behind animates every frame, which would
+     force a continuous re-blur — a solid scrim reads the same on a thin strip */
+  background: rgba(10, 10, 10, 0.85);
+  padding: 30px 0;
   overflow: hidden;
 }
 
@@ -23,10 +24,11 @@
 .item {
   display: inline-flex;
   align-items: center;
-  font-family: var(--font-display), Georgia, serif;
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
   color: var(--gold-light);
   white-space: nowrap;
 }
@@ -37,7 +39,7 @@
   height: 4px;
   border-radius: 50%;
   background: var(--gold);
-  margin: 0 36px;
+  margin: 0 48px;
   opacity: 0.7;
 }
 

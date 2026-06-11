@@ -8,21 +8,23 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function Reveal({ children, as: Tag = 'div', delay = 0, y = 48, className }) {
+export default function Reveal({ children, as: Tag = 'div', delay = 0, y = 48, variant = 'fade', className }) {
   const ref = useRef(null);
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
     const el = ref.current;
+    const mask = variant === 'mask';
     const tween = gsap.fromTo(
       el,
-      { opacity: 0, y },
+      mask ? { clipPath: 'inset(100% 0% 0% 0%)', y: 0, opacity: 1 } : { opacity: 0, y },
       {
         opacity: 1,
         y: 0,
-        duration: 1,
+        duration: mask ? 1.4 : 1,
         delay,
-        ease: 'power3.out',
+        ease: mask ? 'power4.inOut' : 'power3.out',
+        ...(mask && { clipPath: 'inset(0% 0% 0% 0%)' }),
         scrollTrigger: { trigger: el, start: 'top 85%', once: true },
       }
     );
@@ -30,7 +32,7 @@ export default function Reveal({ children, as: Tag = 'div', delay = 0, y = 48, c
       tween.scrollTrigger?.kill();
       tween.kill();
     };
-  }, [delay, y]);
+  }, [delay, y, variant]);
 
   return (
     <Tag ref={ref} className={className}>

@@ -49,7 +49,7 @@ export default function Hero() {
       </div>
 
       <div className={styles.foot} aria-hidden="true">
-        <span>Della Group &mdash; Est. 1996</span>
+        <span>DELLA Group &mdash; Est. 1996</span>
         <span className={styles.scrollHint}>Scroll</span>
         <span>Lonavala &middot; And 10 Cities Beyond</span>
       </div>
