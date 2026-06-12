@@ -23,7 +23,7 @@
   font-family: var(--font-display), Georgia, serif;
   font-size: 20px;
   font-weight: 600;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.18em;
   color: var(--white);
 }
 
@@ -40,7 +40,7 @@
 .link {
   font-size: 10px;
   font-weight: 400;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
   transition: color 0.3s ease;
@@ -54,7 +54,7 @@
   padding: 12px 30px;
   font-size: 10px;
   font-weight: 400;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   border: 1px solid var(--gold);
   color: var(--gold);

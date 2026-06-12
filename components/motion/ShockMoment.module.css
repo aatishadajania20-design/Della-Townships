@@ -43,7 +43,7 @@
 .plate {
   position: relative;
   font-size: 10px;
-  letter-spacing: 0.42em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--muted);
   text-align: center;

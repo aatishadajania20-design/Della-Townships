@@ -7,8 +7,8 @@ const S = 1080;
 const C = S / 2;
 const RINGS = [140, 240, 340, 430];
 const DISTRICTS = ['Wellness', 'Golf', 'Equestrian', 'Lakefront', 'Vineyard', 'Nature'];
-const GOLD = '#d6b55b';
-const GOLD_LIGHT = '#ead9ac';
+const GOLD = '#d4af37';
+const GOLD_LIGHT = '#e6c860';
 const WHITE = '#f5f5f0';
 
 const seg = (s, d) => `clamp(0, calc((var(--seq, 0) * ${F} - ${s}) / ${d}), 1)`;
@@ -89,7 +89,7 @@ export default function MasterplanSketch() {
           height="10"
           stroke={GOLD}
           strokeWidth="1"
-          fill="rgba(214, 181, 91, 0.2)"
+          fill="rgba(212, 175, 55, 0.2)"
           style={{ opacity: `calc(${seg(132 + i * 3, 22)} * 0.55)` }}
         />
       ))}

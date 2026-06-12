@@ -1,11 +1,12 @@
 :root {
   --bg: #0a0a0a;
   --bg-dark: #111111;
-  --gold: #d6b55b;
-  --gold-light: #ead9ac;
+  --gold: #d4af37;
+  --gold-deep: #b8860b;
+  --gold-light: #e6c860;
   --white: #f5f5f0;
   --muted: rgba(245, 245, 240, 0.55);
-  --line: rgba(214, 181, 91, 0.22);
+  --line: rgba(212, 175, 55, 0.22);
 
   --size-hero: clamp(64px, 6vw, 96px);
   --size-title: clamp(40px, 4vw, 64px);
@@ -84,7 +85,7 @@ button {
   gap: 18px;
   font-size: 10px;
   font-weight: 400;
-  letter-spacing: 0.44em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold);
 }
@@ -112,13 +113,13 @@ button {
   padding: 20px 48px;
   font-size: 11px;
   font-weight: 400;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
 .btnSolid {
-  background: var(--gold);
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 38%, var(--gold-deep) 100%);
   color: #0a0a0a;
 }
 

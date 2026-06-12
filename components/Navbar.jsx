@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { useScrollTo } from './motion/SmoothScroll';
 import styles from './Navbar.module.css';
 
@@ -29,6 +30,14 @@ export default function Navbar() {
         onClick={() => scrollTo(0)}
         aria-label="Della Townships — back to top"
       >
+        <Image
+          src="/Images/della-group-logo_01.webp"
+          alt=""
+          width={42}
+          height={35}
+          priority
+          className={styles.logo}
+        />
         DELLA <span>TOWNSHIPS</span>
       </button>
 

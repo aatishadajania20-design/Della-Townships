@@ -32,7 +32,7 @@
   font-size: clamp(140px, 20vw, 320px);
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(214, 181, 91, 0.08);
+  -webkit-text-stroke: 1px rgba(212, 175, 55, 0.08);
   pointer-events: none;
   user-select: none;
 }
@@ -91,7 +91,7 @@
   position: absolute;
   inset: 14px;
   z-index: 2;
-  border: 1px solid rgba(214, 181, 91, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.6);
   opacity: 0;
   transform: scale(0.95);
   transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
@@ -134,7 +134,7 @@
   transition: opacity 0.4s ease;
   background: radial-gradient(
     340px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(234, 217, 172, 0.18),
+    rgba(230, 200, 96, 0.18),
     transparent 65%
   );
 }
@@ -162,7 +162,7 @@
 .index {
   display: block;
   font-size: 11px;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.22em;
   color: var(--gold);
   margin-bottom: 10px;
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Reveal from './motion/Reveal';
@@ -76,13 +77,23 @@ export default function FounderBlock() {
         </blockquote>
 
         <Reveal className={styles.person}>
-          <p className={styles.name}>Jimmy Mistry</p>
-          <p className={styles.role}>Founder &amp; CMD, DELLA Group</p>
-          <p className={styles.bio}>
-            From a single design practice to DELLA Resorts, Lonavala &mdash; India&rsquo;s
-            benchmark for experiential luxury &mdash; Jimmy Mistry has spent three decades
-            designing how India escapes. DELLA Townships is how India will live.
-          </p>
+          <div className={styles.portrait}>
+            <Image
+              src="/Images/jrm.webp"
+              alt="Jimmy Mistry, Founder and CMD of Della Group"
+              width={300}
+              height={300}
+            />
+          </div>
+          <div>
+            <p className={styles.name}>Jimmy Mistry</p>
+            <p className={styles.role}>Founder &amp; CMD, DELLA Group</p>
+            <p className={styles.bio}>
+              From a single design practice to DELLA Resorts, Lonavala &mdash; India&rsquo;s
+              benchmark for experiential luxury &mdash; Jimmy Mistry has spent three decades
+              designing how India escapes. DELLA Townships is how India will live.
+            </p>
+          </div>
         </Reveal>
       </div>
     </section>

@@ -24,7 +24,7 @@ export default function GoldLandscape() {
 
   return (
     <mesh geometry={geometry}>
-      <meshBasicMaterial color="#d6b55b" wireframe transparent opacity={0.1} />
+      <meshBasicMaterial color="#d4af37" wireframe transparent opacity={0.1} />
     </mesh>
   );
 }

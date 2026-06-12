@@ -11,7 +11,7 @@
   z-index: 2;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 90% 70% at 50% 110%, rgba(214, 181, 91, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 90% 70% at 50% 110%, rgba(212, 175, 55, 0.12) 0%, transparent 60%),
     linear-gradient(to bottom, rgba(10, 10, 10, 0.55) 0%, rgba(10, 10, 10, 0) 30%),
     linear-gradient(to top, rgba(10, 10, 10, 0.92) 0%, rgba(10, 10, 10, 0) 36%);
   opacity: calc(0.7 + var(--seq) * 0.3);
@@ -29,9 +29,9 @@
   display: flex;
   align-items: flex-end;
   font-size: 9px;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(234, 217, 172, 0.5);
+  color: rgba(230, 200, 96, 0.5);
   background: rgba(17, 17, 17, 0.18);
   transform: translate3d(calc(var(--px, 0) * -14px), calc(var(--seq) * -26vh + var(--py, 0) * -10px), 0)
     rotate(-2deg);
@@ -44,7 +44,7 @@
   content: '';
   position: absolute;
   inset: 24px 24px 44px;
-  border: 1px solid rgba(214, 181, 91, 0.16);
+  border: 1px solid rgba(212, 175, 55, 0.16);
 }
 
 .planeAlt {
@@ -54,14 +54,14 @@
   left: clamp(24px, 7vw, 120px);
   width: clamp(140px, 15vw, 220px);
   aspect-ratio: 3 / 2;
-  border: 1px solid rgba(214, 181, 91, 0.16);
+  border: 1px solid rgba(212, 175, 55, 0.16);
   padding: 14px;
   display: flex;
   align-items: flex-start;
   font-size: 9px;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(234, 217, 172, 0.42);
+  color: rgba(230, 200, 96, 0.42);
   background: rgba(17, 17, 17, 0.14);
   transform: translate3d(calc(var(--px, 0) * 10px), calc(var(--seq) * -34vh + var(--py, 0) * 8px), 0)
     rotate(1.5deg);
@@ -88,7 +88,7 @@
 .ticks span::after {
   content: '';
   position: absolute;
-  background: rgba(214, 181, 91, 0.55);
+  background: rgba(212, 175, 55, 0.55);
 }
 
 .ticks span::before {
@@ -161,7 +161,7 @@
 .eyebrow {
   font-size: 10px;
   font-weight: 400;
-  letter-spacing: 0.44em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold-light);
   margin-bottom: 40px;
@@ -187,7 +187,7 @@
 .sub {
   font-size: 15px;
   font-weight: 400;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 64px;
@@ -203,7 +203,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 10px;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: rgba(245, 245, 240, 0.4);
   opacity: calc(1 - var(--seq) * 2.4);

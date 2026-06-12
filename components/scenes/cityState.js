@@ -8,6 +8,7 @@ const cityState = {
   complete: 0, // proof: city solidifies
   final: 0, // footer: full vision, beacon
   journey: 0, // overall page progress, drives the camera
+  vel: 0, // signed scroll velocity in [-1, 1], decays in the frame loop
   px: 0, // pointer x in [-1, 1]
   py: 0, // pointer y in [-1, 1]
 };

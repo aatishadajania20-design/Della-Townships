@@ -20,7 +20,7 @@
   font-size: clamp(160px, 24vw, 380px);
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(214, 181, 91, 0.1);
+  -webkit-text-stroke: 1px rgba(212, 175, 55, 0.1);
   pointer-events: none;
   user-select: none;
 }
@@ -35,8 +35,8 @@
   /* blur baked into the gradient falloff — same glow, no filter raster */
   background: radial-gradient(
     circle,
-    rgba(214, 181, 91, 0.06) 0%,
-    rgba(214, 181, 91, 0.035) 40%,
+    rgba(212, 175, 55, 0.06) 0%,
+    rgba(212, 175, 55, 0.035) 40%,
     transparent 72%
   );
   pointer-events: none;

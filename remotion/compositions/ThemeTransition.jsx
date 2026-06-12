@@ -35,7 +35,7 @@ export default function ThemeTransition() {
         style={{
           fontFamily: BODY,
           fontSize: 15,
-          letterSpacing: '0.34em',
+          letterSpacing: '0.24em',
           textTransform: 'uppercase',
           color: GOLD,
           marginBottom: 36,

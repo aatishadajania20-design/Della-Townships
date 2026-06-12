@@ -21,11 +21,12 @@ No Tailwind, no UI frameworks, no component libraries.
 
 app/            → layout.jsx (metadata, fonts, JSON-LD), page.jsx, globals.css, icon.svg
 components/     → Navbar, Hero, Ticker, Statement, AudienceSplit, ThemesGrid, FounderBlock, ProofStrip, PressLogos, Footer (+ .module.css each)
-components/scenes/ → TownshipScene (canvas root), CameraRig, GoldLandscape (terrain ring), RoadNetwork (self-drawing masterplan), CityBlocks (rising towers + beacon), AtmosphereLayer, HeroParticles, cityState.js (shared mutable scroll state)
+components/scenes/ → TownshipScene (canvas root), CameraRig (Catmull-Rom drone path through the city, velocity FOV kick), GoldLandscape (terrain ring), RoadNetwork (self-drawing masterplan), CityModel (GLB city as a staged shader system: phantom blueprint → staggered per-block growth → lit windows/pulses/key-light → calm future state; gold rooftop network + valley trunk routes, ignition wave at rise 0.55→1, ground haze + light shafts, beacon; reacts to cityState.vel), DistantCity (instanced horizon districts on the valley floor, revealed by the ignition wave), AtmosphereLayer, HeroParticles, cityState.js (shared mutable scroll state incl. vel)
 components/motion/ → SmoothScroll (Lenis provider + useScrollTo), Reveal, SectionTransition (data-depth parallax), ScrollSequence (pinned scrub, --seq CSS var), ShockMoment (full-screen city-rise beat)
 components/ExperienceLayer.jsx → persistent fixed z-0 canvas behind the whole site + scroll triggers writing cityState + pointer vars (--px/--py)
 remotion/       → index.jsx, Root.jsx, compositions/{HeroSequence, FounderSequence, ProofTransition, ThemeTransition}
 public/         → static assets; rendered Remotion videos go to public/video/
+public/Images/  → client assets (exact case): 3d-model/city.glb (the township model), jrm.webp (founder portrait), della-group-logo_01.webp (gold Della Group logo)
 
 ## Conventions
 
@@ -38,7 +39,7 @@ public/         → static assets; rendered Remotion videos go to public/video/
 
 ## Brand
 
-bg #0A0A0A · dark section #111111 · gold #C9A84C · gold light #E8D5A3 · white #F5F5F0
+bg #0A0A0A · dark section #111111 · gold #D4AF37 · gold deep #B8860B · gold light #E6C860 · white #F5F5F0 (metallic gold only — never flat yellow, gold is accent not background)
 Display: Cormorant Garamond (next/font). Body: Inter (next/font).
 Hero: clamp(64px,6vw,96px). Section titles: clamp(40px,4vw,64px).
 

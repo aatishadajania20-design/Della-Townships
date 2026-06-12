@@ -41,7 +41,7 @@
   font-size: clamp(140px, 22vw, 360px);
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(234, 217, 172, 0.09);
+  -webkit-text-stroke: 1px rgba(230, 200, 96, 0.09);
   pointer-events: none;
   user-select: none;
 }
@@ -78,7 +78,28 @@
 }
 
 .person {
-  max-width: 520px;
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  max-width: 660px;
+}
+
+.portrait {
+  flex: 0 0 clamp(110px, 12vw, 150px);
+  padding: 6px;
+  border: 1px solid var(--line);
+}
+
+.portrait img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(0.85) contrast(1.05);
+}
+
+@media (max-width: 640px) {
+  .person {
+    flex-direction: column;
+  }
 }
 
 .name {
@@ -90,7 +111,7 @@
 
 .role {
   font-size: 11px;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
   margin: 8px 0 28px;

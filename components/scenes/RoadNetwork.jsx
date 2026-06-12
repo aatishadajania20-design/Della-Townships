@@ -37,12 +37,12 @@ export default function RoadNetwork() {
     const g = new THREE.Group();
     const list = [];
     const matArterial = new THREE.LineBasicMaterial({
-      color: '#d6b55b',
+      color: '#d4af37',
       transparent: true,
       opacity: 0.5,
     });
     const matStreet = new THREE.LineBasicMaterial({
-      color: '#d6b55b',
+      color: '#d4af37',
       transparent: true,
       opacity: 0.24,
     });

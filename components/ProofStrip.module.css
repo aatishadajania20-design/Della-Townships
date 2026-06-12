@@ -15,7 +15,7 @@
 }
 
 .gridBg line {
-  stroke: rgba(214, 181, 91, 0.06);
+  stroke: rgba(212, 175, 55, 0.06);
   stroke-width: 1;
 }
 
@@ -44,7 +44,7 @@
 
 .label {
   font-size: 11px;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 22px;

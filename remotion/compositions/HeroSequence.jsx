@@ -99,7 +99,7 @@ export default function HeroSequence() {
             marginTop: 48,
             fontFamily: BODY,
             fontSize: 20,
-            letterSpacing: '0.3em',
+            letterSpacing: '0.22em',
             textTransform: 'uppercase',
             color: GOLD_LIGHT,
             opacity: subOpacity,

@@ -6,8 +6,8 @@ const F = 360;
 const W = 1280;
 const H = 720;
 const BASE = 600;
-const GOLD = '#d6b55b';
-const GOLD_LIGHT = '#ead9ac';
+const GOLD = '#d4af37';
+const GOLD_LIGHT = '#e6c860';
 const WHITE = '#f5f5f0';
 
 const seg = (s, d) => `clamp(0, calc((var(--seq, 0) * ${F} - ${s}) / ${d}), 1)`;
@@ -140,7 +140,7 @@ export default function TimelineSketch() {
                 fontSize: 170,
                 lineHeight: 1,
                 color: 'transparent',
-                WebkitTextStroke: '2px rgba(214, 181, 91, 0.4)',
+                WebkitTextStroke: '2px rgba(212, 175, 55, 0.4)',
                 opacity: vis,
               }}
             >
@@ -153,7 +153,7 @@ export default function TimelineSketch() {
                 bottom: 52,
                 fontFamily: 'var(--font-ui)',
                 fontSize: 15,
-                letterSpacing: '0.34em',
+                letterSpacing: '0.24em',
                 textTransform: 'uppercase',
                 color: WHITE,
                 whiteSpace: 'nowrap',

@@ -51,7 +51,7 @@ export default function ProofTransition() {
                 style={{
                   fontFamily: BODY,
                   fontSize: 16,
-                  letterSpacing: '0.3em',
+                  letterSpacing: '0.22em',
                   textTransform: 'uppercase',
                   color: GOLD_LIGHT,
                   opacity: eased,

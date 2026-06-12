@@ -31,7 +31,7 @@ export default function HeroParticles() {
   return (
     <points ref={ref} geometry={geometry}>
       <pointsMaterial
-        color="#ead9ac"
+        color="#e6c860"
         size={0.035}
         sizeAttenuation
         transparent

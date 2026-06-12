@@ -18,7 +18,7 @@
   font-family: var(--font-display), Georgia, serif;
   font-size: 24px;
   font-weight: 600;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.18em;
   margin-bottom: 20px;
 }
 
@@ -37,7 +37,7 @@
 
 .heading {
   font-size: 10px;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 24px;

@@ -39,6 +39,7 @@ export default function ExperienceLayer() {
         end: 'max',
         onUpdate: (self) => {
           cityState.journey = self.progress;
+          cityState.vel = Math.max(-1, Math.min(1, self.getVelocity() / 3500));
         },
       }),
     ];
